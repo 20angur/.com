@@ -1,0 +1,137 @@
+@charset "utf-8";
+@font-face {
+    font-family: f28;
+    src: url("fonts/pixelboy-BTraffic 28.ttf");
+}
+
+body {
+    font-family: f28;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333333;
+    direction: rtl;
+}
+
+header {
+    background-color: #6c63ff;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffeb3b;
+    font-weight: bold;
+}
+
+nav a:hover {
+            color: #fff;
+        }
+
+       .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 15px;
+            overflow: hidden;
+            background-color: #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+        }
+
+        .card img.back {
+            opacity: 0;
+        }
+
+        .card:hover img.back {
+            opacity: 1;
+        }
+
+        .card:hover img.front {
+            opacity: 0;
+        }
+
+        .card .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .details-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #6c63ff;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .details-btn:hover {
+            background-color: #5a54e0;
+        }
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #58c686;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #45a973;
+}

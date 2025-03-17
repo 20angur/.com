@@ -1,0 +1,85 @@
+@charset "utf-8";
+    @font-face{
+			font-family: f28;
+	        src: url("fonts/pixelboy-BTraffic 28.ttf");
+		}
+        body {
+            font-family: f28;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333333;
+            direction: rtl;
+        }
+
+        header {
+    background-color: #6c63ff;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffeb3b;
+    font-weight: bold;
+}
+
+nav a:hover {
+            color: #fff;
+        }
+
+        .about-me {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about-me img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+        }
+
+        .about-me h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #444;
+        }
+
+        .about-me p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #58c686;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #45a973;
+        }

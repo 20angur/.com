@@ -1,0 +1,105 @@
+@charset "utf-8";
+	@font-face{
+			font-family: f28;
+	        src: url("fonts/pixelboy-BTraffic 28.ttf");
+		}
+        body {
+            font-family: f28;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333333;
+            direction: rtl;
+        }
+
+        header {
+            background-color: #6c63ff;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .portfolio {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .portfolio-item .item-info {
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .portfolio-item .item-info h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .portfolio-item .item-info p {
+            margin: 0;
+            font-size: 1em;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #58c686;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #45a973;
+        }
