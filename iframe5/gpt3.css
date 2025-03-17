@@ -1,0 +1,442 @@
+@charset "utf-8";
+@font-face{
+	font-family: f14;
+	src: url("fonts/f (49).ttf");
+}
+
+   /* تنظیمات عمومی */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      //font-family: 'Vazir', sans-serif;
+		font-family: f14;
+    }
+    body {
+		body {
+  direction: rtl;
+  text-align: right;
+}
+
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* هدر و منو */
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+    }
+    header nav ul li {
+      margin-left: 20px;
+    }
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    header nav ul li a:hover {
+      color: #ff9900;
+    }
+    /* بخش اصلی (هیرو) */
+    .hero {
+      background: url('imgs/backiee-174999-landscape.jpg') center/cover no-repeat;
+      height: 600px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .hero-content a {
+      background-color: #ff9900;
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .hero-content a:hover {
+      background-color: #e68a00;
+    }
+
+/* استایل بخش جدید: مدل‌های لپ تاپ */
+.laptop-models {
+  padding: 40px;
+  background: linear-gradient(135deg, #e0ccf7, #f5e6ff);
+  position: relative;
+}
+
+/* افزودن المان انگور به عنوان واترمارک در گوشه سمت راست */
+.laptop-models::before {
+  content: "";
+  background: url('https://via.placeholder.com/150?text=Angoor') no-repeat center;
+  opacity: 0.1;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.laptop-models .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* طراحی کارت‌های لپ تاپ */
+.laptop-card {
+  flex: 1 1 calc(25% - 20px);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+}
+
+.laptop-card:hover {
+  transform: translateY(-5px);
+}
+
+.laptop-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.laptop-image-wrapper img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.5s ease;
+}
+
+/* تصویر دوم (هاور) در حالت اولیه پنهان است */
+.laptop-image-wrapper .img-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/* هنگام هاور: تصویر دوم ظاهر شده و تصویر اول محو می‌شود */
+.laptop-card:hover .laptop-image-wrapper .img-back {
+  opacity: 1;
+}
+
+.laptop-card:hover .laptop-image-wrapper .img-front {
+  opacity: 0;
+}
+
+/* متن مدل در پایین کارت */
+.laptop-model-name {
+  padding: 15px;
+  background-color: #fff;
+  font-weight: bold;
+  color: #000;
+  border-top: 1px solid #ddd;
+}
+
+/* تنظیمات واکنش‌گرا */
+@media (max-width: 992px) {
+  .laptop-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+@media (max-width: 600px) {
+  .laptop-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* استایل بخش توضیحات مدل‌ها (شبکه 2×2) - تغییرات فشرده و کوچک */
+.model-details-grid-section {
+  padding: 40px 20px; /* کاهش پدینگ کلی */
+  background: linear-gradient(135deg, #f3e8ff, #ffffff);
+  position: relative;
+}
+
+/* المان واترمارک با لوگوی انگور */
+
+.model-details-grid-section::before {
+  content: "";
+  background: url('https://via.placeholder.com/150?text=Angoor') no-repeat center;
+  opacity: 0.1;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 20px;
+  left: 20px;
+}
+
+/* استایل جدید برای بخش detail-item با ساختار 2 ستون */
+
+.detail-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* سرعنوان کادر */
+.detail-header h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #4B0082;
+}
+.detail-header h5 {
+  font-size: 16px;
+  margin: 0;
+  color: #555;
+}
+
+/* محتوای اصلی کادر: تقسیم به دو ستون */
+.detail-content {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* ستون تصاویر (سمت چپ) */
+.detail-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  order: 2;  /* تصاویر را به ترتیب دوم می‌فرستیم تا در سمت چپ قرار بگیرند */
+
+}
+.detail-images img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.detail-images img:hover {
+  transform: scale(1.05);
+}
+
+/* ستون توضیحات (سمت راست) - فضای بیشتری اشغال می‌کند */
+.detail-texts {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  order: 1;  /* توضیحات را اولاً قرار می‌دهیم تا در سمت راست نمایش داده شوند */
+	
+}
+.text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* جهت تراز کردن محتوا به سمت راست */
+}
+
+.text-block p {
+  font-size: 16px;
+  margin: 0;
+  text-align: right;
+  color: #333;
+  line-height: 1.5;
+  width: 100%;
+}
+.text-block hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 80%; /* خط افقی کوتاه‌تر از کل عرض */
+  margin-top: 5px;
+}
+
+/* در واکنش‌گرایی، در نمایشگرهای کوچکتر ستون‌ها به صورت ستونی نمایش داده شوند */
+@media (max-width: 768px) {
+  .detail-content {
+    flex-direction: column;
+  }
+  .detail-texts, .detail-images {
+    flex: 1;
+  }
+  .text-block hr {
+    width: 90%;
+    align-self: center;
+  }
+}
+
+
+/* واکنش‌گرایی: در نمایشگرهای کوچکتر، آیتم‌ها به صورت ستونی نمایش داده شوند */
+@media (max-width: 768px) {
+  .detail-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .detail-text {
+    padding: 20px;
+  }
+}
+
+
+    /* بخش‌های عمومی */
+    .section {
+      padding: 60px 40px;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      color: #222;
+    }
+    /* کارت‌های محصول */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: calc(20% - 20px);
+      margin-bottom: 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .product-card .card-content {
+      padding: 20px;
+    }
+    .product-card .card-content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .product-card .card-content p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #777;
+    }
+    .product-card .card-content .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff9900;
+    }
+    .product-card .card-content a {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #222;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .product-card .card-content a:hover {
+      background-color: #555;
+    }
+    /* بخش پیشنهاد ویژه */
+    .promo {
+      background-color: #ff9900;
+      color: #fff;
+      padding: 40px;
+      text-align: center;
+      border-radius: 8px;
+      margin: 40px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    /* فوتر */
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 40px;
+    }
+    footer .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    footer .footer-content div {
+      width: calc(33.333% - 20px);
+      margin-bottom: 20px;
+    }
+    footer .footer-content h3 {
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    footer .footer-content ul {
+      list-style: none;
+    }
+    footer .footer-content ul li {
+      margin-bottom: 10px;
+    }
+    footer .footer-content ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer .footer-content ul li a:hover {
+      color: #ff9900;
+    }
+    @media (max-width: 992px) {
+      .product-card {
+        width: calc(50% - 20px);
+      }
+      footer .footer-content div {
+        width: calc(50% - 20px);
+      }
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+      .product-card {
+        width: 100%;
+      }
+      footer .footer-content div {
+        width: 100%;
+      }
+    }
