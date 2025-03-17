@@ -1,0 +1,523 @@
+@charset "utf-8";
+/* جلوگیری از اسکرول افقی */
+html {
+  overflow-x: hidden;
+}
+
+/* بارگذاری فونت خوش‌نویس فارسی (مثال: IranKhoshnevis) */
+@font-face {
+  font-family: "IranKhoshnevis";
+  src: url("font/Vazirmatn-Black.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IranKhoshnevis", sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* هدر */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  font-size: 1.8rem;
+  color: #d4af37;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+  color: #d4af37;
+}
+
+/* منوی واکنش‌گرا */
+#menu-toggle {
+  display: none;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+  #menu-toggle:checked ~ nav .nav-links {
+    opacity: 1;
+    visibility: visible;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* بخش معرفی (Hero) */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("img/poster (2).jpeg") no-repeat center/cover;
+}
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  transform: translate(-50%, -50%);
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+.hero-content {
+  color: #fff;
+  z-index: 1;
+  animation: fadeIn 1.2s ease-out;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 15px;
+}
+.btn:hover {
+  background: #c0952e;
+  transform: scale(1.05);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* سکشن دسته‌بندی لپ‌تاپ‌ها */
+.categories {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+.categories h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+.categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.category-card {
+  background: #f9f9f9;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.category-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.category-image .img2 {
+  opacity: 0;
+}
+.category-card:hover .category-image .img2 {
+  opacity: 1;
+}
+.category-card:hover .category-image .img1 {
+  opacity: 0;
+}
+.category-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 15px 0 5px;
+}
+.category-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 15px 15px;
+}
+
+/* بخش محصولات */
+.products {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+.products h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.product-card {
+  background: #fff;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.product-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.product-card p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.product-card .price {
+  font-weight: bold;
+  color: #d4af37;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* بخش تخفیف‌ها */
+.discount {
+  padding: 50px 20px;
+  background: #f1f1f1;
+  text-align: center;
+}
+.discount h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+.discount-offers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.offer {
+  background: #fff;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.offer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.offer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #d4af37;
+}
+.offer p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* بخش مزایا */
+.benefits {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+.benefits h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.benefit-item {
+  width: 280px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+.benefit-item img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+.benefit-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.benefit-item p {
+  font-size: 0.9rem;
+}
+
+/* بخش نظرات مشتریان */
+.testimonials {
+  padding: 50px 20px;
+  background: #f8f8f8;
+  text-align: center;
+}
+.testimonials h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+.testimonial-slider {
+  display: flex;
+  overflow: hidden;
+  animation: slide 10s infinite;
+}
+.testimonial {
+  min-width: 100%;
+  padding: 20px;
+  transition: opacity 0.5s ease;
+}
+.testimonial p {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.testimonial span {
+  font-weight: bold;
+  color: #333;
+}
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* بخش بلاگ/اخبار */
+.blog {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+.blog h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.blog-post {
+  background: #fff;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.blog-post img {
+  width: 100%;
+  height: auto;
+}
+.blog-post h3 {
+  font-size: 1.2rem;
+  padding: 15px;
+  margin: 0;
+  color: #333;
+}
+.blog-post p {
+  padding: 0 15px 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* فوتر */
+footer {
+  background: #222;
+  color: #ddd;
+  padding: 30px 20px;
+  text-align: center;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.newsletter h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #d4af37;
+}
+.newsletter p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.newsletter input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+}
+.newsletter button {
+  padding: 10px 20px;
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.newsletter button:hover {
+  background: #c0952e;
+  transform: scale(1.05);
+}
+.footer-links {
+  margin: 20px 0;
+}
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #d4af37;
+}
+.social-links a img {
+  width: 24px;
+  transition: opacity 0.3s ease;
+}
+.social-links a img:hover {
+  opacity: 0.7;
+}
+
+/* مدیا کوئری برای اندازه‌های کوچک */
+@media (max-width: 480px) {
+  .category-card,
+  .product-card,
+  .offer,
+  .benefit-item,
+  .blog-post {
+    width: 90%;
+  }
+  .nav-links {
+    width: 100%;
+  }
+}
