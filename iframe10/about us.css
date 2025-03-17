@@ -1,0 +1,243 @@
+@charset "utf-8";
+@font-face{
+	font-family: f18;
+	src: url("font/pixelboy-BNarm 18.ttf");
+}
+/* استایل‌های پایه از صفحات قبلی */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //font-family: 'Arial', sans-serif;
+	font-family: f18;
+}
+
+body {
+    background-color: #f5f5f5;
+    line-height: 1.8;
+}
+
+header {
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #2a4365;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4a5568;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2b6cb0;
+}
+
+.separator {
+    height: 2px;
+    background-color: #e2e8f0;
+    margin-top: 1rem;
+}
+
+/* استایل‌های اختصاصی صفحه درباره ما */
+.about-page {
+    padding: 6rem 5% 4rem;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.hero-text {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.hero-title {
+    color: #2a4365;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 3px;
+    background: #2b6cb0;
+}
+
+.hero-description {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.hero-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
+.values-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: #2b6cb0;
+    margin-bottom: 1rem;
+}
+
+.value-title {
+    color: #2a4365;
+    margin: 1rem 0;
+}
+
+.team-section {
+    margin: 4rem 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.member-image {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+.member-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.member-name {
+    color: #2a4365;
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(43, 108, 176, 0.9);
+    color: white;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-member:hover .member-overlay {
+    opacity: 1;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text {
+        padding: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-image {
+        height: 250px;
+    }
+}
