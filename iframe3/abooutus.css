@@ -1,0 +1,264 @@
+@font-face{
+	font-family: f17;
+	src: url("font/pixelboy-BMitra 17.ttf");
+}
+/* تنظیمات عمومی */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    //font-family: 'Roboto', sans-serif;
+	font-family: f17;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    direction: rtl;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* هدر */
+.site-header {
+    background: #0073e6;
+    color: #fff;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header .logo img {
+    height: 50px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav ul li {
+    margin-left: 1.5rem;
+}
+
+.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #ff6f61;
+}
+
+/* سربرگ درباره ما */
+.about-hero {
+    background: url('img/back.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+}
+
+/* داستان شرکت */
+.company-story {
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.story-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* مأموریت و چشم‌انداز */
+.mission-vision {
+    padding: 3rem 0;
+    background: #f9f9f9;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mv-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.mv-card i {
+    font-size: 2.5rem;
+    color: #0073e6;
+    margin-bottom: 1rem;
+}
+
+/* تیم مدیریتی */
+.team-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* جوایز و مجوزها */
+.awards-section {
+    padding: 3rem 0;
+    background: #0073e6;
+    color: #fff;
+    text-align: center;
+}
+
+.award-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.award-item {
+    text-align: center;
+}
+
+.award-item img {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.award-item p {
+    font-size: 0.9rem;
+}
+
+/* نظرات مشتریان */
+.testimonials-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.testimonial-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial h4 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial p:last-child {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* فوتر */
+.site-footer {
+    background: #333;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff6f61;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+}

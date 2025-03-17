@@ -1,0 +1,241 @@
+@charset "utf-8";
+@font-face{
+	font-family: f17;
+	src: url("font/pixelboy-BMitra 17.ttf");
+}
+/* تنظیمات عمومی */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    //font-family: 'Roboto', sans-serif;
+	font-family: f17;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    direction: rtl;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* هدر */
+.site-header {
+    background: #0073e6;
+    color: #fff;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header .logo img {
+    height: 50px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav ul li {
+    margin-left: 1.5rem;
+}
+
+.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #ff6f61;
+}
+
+/* سربرگ زمینه‌های فعالیت */
+.fields-hero {
+    background: url('img/back.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.fields-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.fields-hero p {
+    font-size: 1.2rem;
+}
+
+/* زمینه‌های فعالیت */
+.fields-section {
+    padding: 3rem 0;
+    background: #fff;
+}
+
+.fields-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.field-item {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.field-item:hover {
+    transform: translateY(-10px);
+}
+
+.field-icon {
+    font-size: 2.5rem;
+    color: #0073e6;
+    margin-right: 1.5rem;
+}
+
+.field-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.field-content p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* مراحل اجرای پروژه */
+.project-steps-section {
+    padding: 3rem 0;
+    background: #0073e6;
+    color: #fff;
+    text-align: center;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.step-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.step-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0073e6;
+    margin-bottom: 1rem;
+}
+
+.step-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.step-content p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* نمونه پروژه‌های موفق */
+.success-projects-section {
+    padding: 3rem 0;
+    background: #fff;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-item {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.project-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.project-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* فوتر */
+.site-footer {
+    background: #333;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff6f61;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+}
