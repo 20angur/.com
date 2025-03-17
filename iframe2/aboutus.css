@@ -1,0 +1,260 @@
+@charset "utf-8";
+@font-face{
+	font-family: f18;
+	src: url("font/pixelboy-BNarm 18.ttf");
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    //-family: 'Vazirmatn', sans-serif;
+	font-family: f18;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #0074D9;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+/* Hero Section for About Page */
+.about-hero {
+    background: url('img/backiee-174999-landscape.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* History Section */
+.history {
+    background-color: white;
+    padding: 50px 0;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+}
+
+.timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-item .year {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0074D9;
+}
+
+.timeline-item .content {
+    padding-left: 20px;
+}
+
+/* Mission and Vision Section */
+.mission-vision {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mission, .vision {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Values Section */
+.values {
+    background-color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.value-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.value-card {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Management Team Section */
+.management-team {
+    background-color: #2E8B57;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin: 5px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item .year {
+        left: -40px;
+    }
+}
