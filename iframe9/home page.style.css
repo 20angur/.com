@@ -1,0 +1,100 @@
+@charset "utf-8";
+	/* Reset کردن استایل‌های پیش‌فرض */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F4D1A0; /* هلویی مخملی */
+    color: #333;
+}
+
+/* هدر */
+header {
+    background-color: #87CEEB; /* آبی آسمانی */
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo h1 {
+    font-size: 36px;
+    color: white;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* نمایش محصولات */
+.product-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h2 {
+    color: #333;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.product-card p {
+    color: #666;
+    margin-top: 10px;
+}
+
+.product-card button {
+    background-color: #87CEEB; /* آبی آسمانی */
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.product-card button:hover {
+    background-color: #6CA9D3;
+}
+
+/* فوتر */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
